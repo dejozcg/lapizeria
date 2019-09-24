@@ -16,26 +16,34 @@
             </main>
         </div>
 
-        <div class="box-information container clear">
-            <div class="box">
+        <div class="box-information container">
+            <div class="single-box">
                 <?php 
                     $id_image = get_field('image1');
                     $image = wp_get_attachment_image_src($id_image, 'boxes');
                 ?>
+                <img src="<?php echo $image[0]; ?>" alt="">
                 <div class="content-box">
-                    <img src="<?php echo $image[0]; ?>" alt="">
                     <?php the_field('description1'); ?>
-                    <?php 
+                </div>
+            </div>
+            <div class="single-box">
+                <?php 
                     $id_image = get_field('image2');
                     $image = wp_get_attachment_image_src($id_image, 'boxes');
                 ?>
-                    <img src="<?php echo $image[0]; ?>" alt="">
+                <img src="<?php echo $image[0]; ?>" alt="">
+                <div class="content-box">
                     <?php the_field('description2'); ?>
-                    <?php 
+                </div>
+            </div>
+            <div class="single-box">
+                <?php 
                     $id_image = get_field('image3');
                     $image = wp_get_attachment_image_src($id_image, 'boxes');
                 ?>
-                    <img src="<?php echo $image[0]; ?>" alt="">
+                <img src="<?php echo $image[0]; ?>" alt="">
+                <div class="content-box">
                     <?php the_field('description3'); ?>
                 </div>
             </div>

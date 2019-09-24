@@ -282,3 +282,26 @@ nav.site-nav ul li.current_page_item a{
     font-size: 18px;
     line-height: 50px;
 }
+
+/** BOXES **/
+.box-information{
+    display: grid;
+}
+
+@media screen and (min-width: 768px){
+    .box-information{
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+.single-box{
+    display: grid;
+    grid-template-columns: 2fr 3fr;
+}
+
+@media screen and (min-width: 768px){
+    .single-box{
+        grid-template-columns: unset;
+        grid-template-rows: 1fr 1fr;
+    }
+}
