@@ -16,8 +16,8 @@
             </main>
         </div>
 
-        <div class="box-information container">
-            <div class="single-box">
+        <div class="box-information clear container">
+            <div class="single-box clear">
                 <?php 
                     $id_image = get_field('image1');
                     $image = wp_get_attachment_image_src($id_image, 'boxes');
