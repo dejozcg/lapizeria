@@ -60,7 +60,7 @@
                 <a href="<?php the_permalink(); ?>">
                     <?php the_post_thumbnail('specialties'); ?>
     
-                    <h2><?php the_title(); ?><span> $ <?php the_field('price'); ?></span></h2>
+                    <h4><?php the_title(); ?><span> $ <?php the_field('price'); ?></span></h4>
                     <?php the_content(); ?>
                 </a>
             </div>
