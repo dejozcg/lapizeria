@@ -59,7 +59,8 @@ h4{
     margin: 0 auto;
 }
 
-.sr-text {
+.sr-text,
+.screen-reader-text {
     display: none;
 }
 
@@ -69,6 +70,30 @@ h4{
 
 .text-center{
     text-align: center;
+}
+.text-left{
+    text-align: left;
+}
+
+.button{
+    background-color: #a61206;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 16px;
+    width: auto;
+    border-radius: 8px;
+    color: #fff;
+    padding: 15px 80px;
+    margin-top: 20px;
+    display: inline-block;
+    text-decoration: none;
+    cursor: pointer;
+}
+.primary{
+    background-color: #a61206;
+    transition: background-color .50s ease;
+}
+.primary:hover{
+    background-color: #8b0d03;
 }
 
 /** HEARED **/
@@ -483,4 +508,125 @@ img {
 }
 .single-specialties p.price span{
     color: #000000;
+}
+
+/** BLOG */
+article.entry{
+    padding: 30px;
+}
+
+header.entry-header{
+    margin-top: 20px;
+}
+
+header.entry-header .date,
+.entry-information .date{
+    background-color: #f19f30;
+    float: left;
+    width: 70px;
+    height: 70px;
+    margin-right: 20px;
+    text-align: center;
+    padding: 5px;
+}
+header.entry-header .date time,
+.entry-information .date time{
+    font-size: 30px;
+    font-family: 'Raleway', sans-serif;
+    font-weight: 700;
+
+}
+header.entry-header .date time span,
+.entry-information .date time span{
+    font-size: 16px;
+    display: block;
+    text-transform: uppercase;
+}
+header.entry-header .entry-title{
+    float: right;
+    width: calc(100% - 90px);
+}
+header.entry-header h2{
+    font-size: 24px;
+    text-transform: uppercase;
+    font-weight: 700;
+    margin: 0;
+}
+header.entry-header p.author,
+.entry-information p.author{
+    text-transform: uppercase;
+    color: #000;
+    font-family: 'Raleway', sans-serif;
+    margin: 0;
+}
+p.author i{
+    font-size: 30px;
+    color: #f19f30;
+}
+
+div.entry-content p{
+    margin-bottom: 0;
+    padding: 0px;
+    line-height: 24px;
+}
+
+/** SIDEBAR **/
+aside.sidebar{
+    margin-top: 3px;
+}
+
+form.searchform{
+    position: relative;
+}
+form.searchform #searchsubmit{
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 42px;
+    height: 42px;
+    background-color: #a61206;
+    border-width: 0;
+    text-indent: -9999px;
+    background-image: url(img/search.png);
+    background-repeat: no-repeat;
+    background-position: center center;
+    border: none;
+    cursor: pointer;
+}
+form.searchform #s{    
+    width: 100%;
+    padding: 10px;
+}
+aside.sidebar .widget{
+    margin-bottom: 20px;
+}
+aside.sidebar h3{
+    font-weight: 700;
+    font-size: 24px;
+    text-transform: uppercase;
+}
+
+aside.sidebar a{
+    text-decoration: none;
+}
+aside.sidebar .widget ul {
+    list-style: none;
+}
+
+aside.sidebar .widget ul li{
+    margin-bottom: 16px;
+}
+
+aside.sidebar .widget ul li a{
+    text-decoration: none;
+    color: #000;
+}
+
+aside.sidebar .widget ul li  a:hover{
+    color: #f19f30;
+}
+
+.entry-header .single-blogg {
+    float: right;
+    margin: 10px;
 }

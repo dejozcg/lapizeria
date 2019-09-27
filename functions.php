@@ -40,7 +40,7 @@ function lapizeria_menus(){
 
 add_action('init', 'lapizeria_menus');
 
-function lapizzeria_specialties() {
+function lapizeria_specialties() {
 	$labels = array(
 		'name'               => _x( 'Pizzas', 'lapizeria' ),
 		'singular_name'      => _x( 'Pizza', 'post type singular name', 'lapizeria' ),
@@ -78,4 +78,21 @@ function lapizzeria_specialties() {
 	register_post_type( 'specialties', $args );
 }
 
-add_action( 'init', 'lapizzeria_specialties' );
+add_action( 'init', 'lapizeria_specialties' );
+
+/** WIDGET ZONE */
+function lapizeria_widgets() {
+
+	register_sidebar(
+		array(
+			'name'          => 'Blog Sidebar',
+			'id'            => 'blog_sidebar',
+			'before_widget' => '<div class="widget">',
+			'after_widget'  => '</div>',
+			'before_title'  => '<h3>',
+			'after_title'   => '</h3>',
+		)
+	);
+
+}
+add_action( 'widgets_init', 'lapizeria_widgets' );

@@ -48,6 +48,9 @@ $image = wp_get_attachment_image_src($image, 'full');
         </article>
       <?php endwhile; ?>
     </main>
+
+    <?php get_sidebar(); ?>
+
   </div>
 </div>
 
