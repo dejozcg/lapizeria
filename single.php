@@ -12,7 +12,7 @@
     </div>
 
     <div class="main-content container">
-        <main class="text-left content-text">
+        <main class="text-center content-text">
             <div class="entry-information clear">
                 <div class="date">
                     <time>
@@ -27,14 +27,27 @@
                     <?php the_author(); ?>
                 </p>
                 <!--author -->
-
-
-                <?php the_content(); ?>
-
-                <?php the_post_thumbnail('boxes'); ?>
-
             </div>
+
+            <?php the_content(); ?>
+
+            <?php //the_post_thumbnail('boxes'); 
+                ?>
+
+
         </main>
+    </div>
+
+    <div class="comments container">
+        <?php comment_form(); ?>
+    </div>
+    <div class="comment-list container">
+        <?php 
+            $coments = get_comment(
+                '' );
+        ?>
+        <?php the_content(); ?>
+        <?php endwhile; ?>
     </div>
 
 <?php endwhile; ?>
