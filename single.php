@@ -42,12 +42,18 @@
         <?php comment_form(); ?>
     </div>
     <div class="comment-list container">
-        <?php 
-            $coments = get_comment(
-                '' );
-        ?>
-        <?php the_content(); ?>
-        <?php endwhile; ?>
+        <ol class="commentlist">
+            <?php
+                $coments = get_comments(array(
+                    'post_id'   => $post->ID,
+                    'status'    => 'approve'
+                ));
+                wp_list_comments(array(
+                    'per_page'          => 10,
+                    'reverse_top_level' => false
+                ), $coments);
+                ?>
+        </ol>
     </div>
 
 <?php endwhile; ?>

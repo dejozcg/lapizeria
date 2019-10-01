@@ -226,6 +226,7 @@ nav.site-nav ul li a{
     font-family: 'Raleway', sans-serif;
 }
 nav.site-nav ul li.current_page_item a,
+nav.site-nav ul li.current_page_parent,
 .single-specialties nav.site-nav ul li.menu-item-25{
     border-bottom: 8px solid #a61206;
 }
@@ -695,3 +696,54 @@ p.form-submit{
     text-align: center;
     display: block;
 }
+
+/** COMMENTS LIST **/
+ol.commentlist{
+    list-style: none;
+}
+ol.commentlist li.comment{
+    background-color: #e1e1e1;
+    margin-bottom: 20px;
+    padding: 20px;
+}
+
+ol.commentlist li.comment cite{
+    color: #a61206;
+    font-size: 20px;
+    font-weight: bold;
+}
+li.comment .comment-author{
+    margin-bottom: 10px;
+}
+li.comment a{
+    color: #a61206;
+}
+li.comment ul.children{
+    list-style: none;
+}
+
+li.comment ul.children li/*,
+li.comment ul.children div,
+li.comment ul.children div div.reply{ */{
+    margin-top: 20px;
+    background-color: #3d3d3d;
+}
+
+/** GALERY **/
+.wp-block-gallery .blocks-gallery-item {
+    width: 50% !important;
+    margin: 0 !important;
+    padding: 5px 10px !important;
+}
+
+@media only screen and (min-width: 768px){
+    .wp-block-gallery .blocks-gallery-item {
+        width: 25% !important;
+    }
+}
+
+.wp-block-gallery img{
+    border: none !important;
+}
+
+/** RESERVATION FORM **/
