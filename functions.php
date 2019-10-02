@@ -1,5 +1,14 @@
 <?php
 
+// Link or Import the database.php file
+require get_template_directory() .'/inc/database.php';
+
+// Hadles the submission to the database
+require get_template_directory() .'/inc/reservation.php';
+
+// Create Option Pages for the Theme
+require get_template_directory() .'/inc/options.php';
+
 function lapizeria_setup(){
     add_theme_support('post-thumbnails');
 
