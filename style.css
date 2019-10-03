@@ -95,6 +95,13 @@ h4{
 .primary:hover{
     background-color: #8b0d03;
 }
+.secondary{
+    background-color: #f19f30;
+    transition: background-color .50s ease;
+}
+.secondary:hover{
+    background-color: #e0932a;
+}
 
 /** HEARED **/
 header.site-header{
@@ -225,9 +232,14 @@ nav.site-nav ul li a{
     color: black;
     font-family: 'Raleway', sans-serif;
 }
+/* specialties-template-default single single-specialties postid-60 
+   page-template page-template-our_menu page-template-our_menu-php page page-id-22
+   post-template-default single single-post postid-89 single-format-standard
+
+*/
 nav.site-nav ul li.current_page_item a,
 nav.site-nav ul li.current_page_parent,
-.single-specialties nav.site-nav ul li.menu-item-25{
+.single-specialties nav.site-nav ul li.menu-item-25 {
     border-bottom: 8px solid #a61206;
 }
 
@@ -798,3 +810,97 @@ form.reservation-form input[type="submit"]{
     border: none;
     text-transform: uppercase;
 }
+
+/** FRONT Page **/
+.home div.hero{
+    height: 750px;
+}
+
+@media only screen and (min-width: 768px){
+    .home .main-content{
+        margin: 0 auto;
+        padding: 0;
+    }
+    .home .hero-text{
+        width: 50%;
+    }
+}
+
+@media only screen and (min-width: 992){
+    .home .hero-text{
+        width: 40%;
+    }
+}
+.home div.hero-text p{
+    line-height: 40px;
+    font-size: 18px;
+}
+/* .home .main-content{
+    display: table;
+    margin: 0 auto;
+    width: 100%;
+    text-align: center;
+    position: relative;
+} */
+.specialty-content { 
+    position: relative;
+    overflow: hidden;
+}
+
+.specialty-content .information {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(241, 159, 48, 75);
+    text-align: center;
+    color: #ffffff;
+    padding: 5px;
+    opacity: 0;
+    transition: all .5s ease-in-out;
+    /* z-index: 3; */
+}
+
+.specialty-content:hover .information{
+    top: 0%;
+    opacity: 1;
+}
+ 
+.specialty-content .information .price{
+    font-size: 60px;
+    font-weight: bold;
+    margin-top: 30px;
+}
+
+.specialty-content .information h3{
+    font-size: 30px;
+    margin-top: 40px;
+    font-weight: 700;
+}
+
+.specialty-content .information p{
+    margin: 0 0 10px 0;
+}
+
+@media only screen and (max-width: 768px){
+    .specialty-content{
+        overflow: visible;
+        display: block;
+        margin-bottom: 30px;
+    }
+    .specialty-content .information{
+        position: relative;
+        opacity: 1;
+        background-color: #f19f30;
+        padding: 30px;
+    }
+    .specialties-content img{
+        width: 100%;
+    }
+}
+
+
+
+
+
