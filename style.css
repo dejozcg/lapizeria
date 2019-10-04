@@ -75,6 +75,7 @@ h4{
     text-align: left;
 }
 
+
 .button{
     background-color: #a61206;
     font-family: 'Open Sans', sans-serif;
@@ -900,7 +901,45 @@ form.reservation-form input[type="submit"]{
     }
 }
 
+/** Ingrediants **/
+section.ingrediants{
+    background-image: url(img/bg_ingredients.jpg);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    margin-top: 50px;
+    padding: 80px 0;
+    color: #ffffff;
+}
 
+section.ingrediants h3{
+    line-height: 60px;
+    font-size: 40px;
+    font-weight: 700;
+}
 
+section.ingrediants p{
+    line-height: 40px;
+    font-size: 20px;
+}
 
+@media only screen and (max-width: 767px){
+    section.ingrediants h3,
+    section.ingrediants p{
+        text-align: center;
+    }
+    section.ingrediants a{
+        margin: 0 auto;
+        display: block;
+        width: 250px;
+    }
+}
 
+section.ingrediants .image{
+    padding-top: 30px;
+    text-align: center;
+}
+
+section.ingrediants .image img{
+    width: 80%;
+}
