@@ -36,10 +36,14 @@ function lapizeria_style(){
     wp_enqueue_style('style');
 
 	wp_register_script('script', get_template_directory_uri() . '/js/scripts.js', array('jquery'), '1.0.0', true);
+	wp_register_script('googlemaps', 'https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap', array(), '', true);
+	// wp_register_script('googlemaps', 'https://maps.googleapis.com/maps/api/js?&key=AIzaSyCCyUD3v8kBVRphqG1RYjYcSKBcyC-prKw&callback=initMap', array(), '', true);
 	wp_register_script('fluidboxjs', get_template_directory_uri() . '/js/jquery.fluidbox.min.js', array('jquery'), '1.0.0', true);
+
     // add JavaScript
 	wp_enqueue_script('jquery');
 	wp_enqueue_script('fluidboxjs');
+	wp_enqueue_script('googlemaps');
     wp_enqueue_script('script');
 }
 
@@ -112,3 +116,11 @@ function lapizeria_widgets() {
 
 }
 add_action( 'widgets_init', 'lapizeria_widgets' );
+
+function add_async_defer($tag, $handle){
+	if('googlemaps' !== $handle){
+		return $tag;
+	}
+	return str_replace(' src', 'async="async" defer="defer" src', $tag);
+}
+add_filter('script_loader_tag', 'add_async_defer', 10, 2);

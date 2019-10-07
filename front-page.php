@@ -50,28 +50,46 @@
 <section class="ingrediants">
     <div class="container">
         <div class="container-grid">
-            <?php while(have_posts()): the_post(); ?>
-            <div class="columns2-4">
+            <?php while (have_posts()) : the_post(); ?>
+                <div class="columns2-4">
                     <h3><?php the_field('fresh_title'); ?></h3>
                     <?php the_field('ingrident_text'); ?>
                     <?php $url = get_page_by_title('About us'); ?>
                     <a class="button primary" href="<?php echo get_permalink($url); ?>">read more</a>
-            </div>
-            <div class="columns2-4">
-                <img class="image" src="<?php the_field('ingridient_image'); ?>" alt="<?php the_field('fresh_title'); ?>">
-            </div>
-            <?php endwhile; ?>            
+                </div>
+                <div class="columns2-4">
+                    <img class="image" src="<?php the_field('ingridient_image'); ?>" alt="<?php the_field('fresh_title'); ?>">
+                </div>
+            <?php endwhile; ?>
         </div>
     </div>
 </section>
 
 <section class="container clear">
-        <h2 class="text-center primary-text">Galery</h2>
-            <?php
-                $url = get_page_by_title('Galery');
+    <h2 class="text-center primary-text">Galery</h2>
+    <?php
+    $url = get_page_by_title('Galery');
+    echo $url->post_content;
+    // echo '<p>';
+    // echo '<pre>';
+    // var_dump($url);
+    // echo '</pre>';
+    // echo '</p';
+    ?>
+</section>
 
-                echo  $url->ID;
-            ?>
+<section class="location-reservation clear container">
+    <div class="container-grid">
+        <div class="columns2-4">
+            <div id='map'>
+                LOCATION
+
+            </div>
+        </div>
+        <div class="columns2-4">
+            <?php get_template_part('templates/reservation-form'); ?>
+        </div>
+    </div>
 </section>
 
 <?php get_footer(); ?>
