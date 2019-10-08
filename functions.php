@@ -35,8 +35,9 @@ function lapizeria_style(){
     wp_enqueue_style('FontAwesome');
     wp_enqueue_style('style');
 
+	$apikey = esc_html(get_option('lapizeria_gmap_apikey'));
 	wp_register_script('script', get_template_directory_uri() . '/js/scripts.js', array('jquery'), '1.0.0', true);
-	wp_register_script('googlemaps', 'https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap', array(), '', true);
+	wp_register_script('googlemaps', 'https://maps.googleapis.com/maps/api/js?key=' .$apikey . '&callback=initMap', array(), '', true);
 	// wp_register_script('googlemaps', 'https://maps.googleapis.com/maps/api/js?&key=AIzaSyCCyUD3v8kBVRphqG1RYjYcSKBcyC-prKw&callback=initMap', array(), '', true);
 	wp_register_script('fluidboxjs', get_template_directory_uri() . '/js/jquery.fluidbox.min.js', array('jquery'), '1.0.0', true);
 
@@ -44,7 +45,17 @@ function lapizeria_style(){
 	wp_enqueue_script('jquery');
 	wp_enqueue_script('fluidboxjs');
 	wp_enqueue_script('googlemaps');
-    wp_enqueue_script('script');
+	wp_enqueue_script('script');
+	
+	wp_localize_script(
+		'script',
+		'options',
+		array(
+			'latitude' => esc_html(get_option('lapizeria_gmap_latitud')),
+			'longitude'=> esc_html(get_option('lapizeria_gmap_longitude')),
+			'zoom'	   => esc_html(get_option('lapizeria_gmap_zoom'))
+		)
+	);
 }
 
 add_action('wp_enqueue_scripts', 'lapizeria_style');

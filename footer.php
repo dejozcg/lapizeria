@@ -9,8 +9,8 @@
             ?>
 
             <div class="location">
-                <p>Podgorica, ul. Slobode br. 2423</p>
-                <p>Phone Numbe: +38267256456</p>
+                <p><?php echo esc_html(get_option('lapizeria_location')); ?></p>
+                <p>Phone Numbe: <?php echo esc_html(get_option('lapizeria_phonenumber')); ?></p>
             </div>
 
             <p class="copyright">All right reserved <?php echo date('Y') ?></p>
