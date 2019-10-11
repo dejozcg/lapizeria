@@ -236,11 +236,18 @@ nav.site-nav ul li a{
 /* specialties-template-default single single-specialties postid-60 
    page-template page-template-our_menu page-template-our_menu-php page page-id-22
    post-template-default single single-post postid-89 single-format-standard
+   post-template-default single single-post postid-89 single-format-standard logged-in admin-bar wp-custom-logo customize-support
 
+specialties-template-default single single-specialties postid-68 logged-in admin-bar p-cwustom-logo customize-support
+
+specialties-template-default single single-specialties postid-68 logged-in admin-bar wp-custom-logo customize-support
 */
 nav.site-nav ul li.current_page_item a,
-nav.site-nav ul li.current_page_parent,
-.single-specialties nav.site-nav ul li.menu-item-25 {
+.post-template-default .main-menu ul li.current_page_parent,
+/* nav.site-nav ul li.current_page_parent a, */
+.single-specialties .main-menu nav.site-nav ul li.menu-item-25,
+.specialties-template-default .main-menu li.menu-item-25 {
+/* .single-specialties ul li.current_page_parent a { */
     border-bottom: 8px solid #a61206;
 }
 
@@ -430,7 +437,7 @@ footer nav ul li a {
     text-decoration: none;
 }
 
-.location {
+footer .location {
     margin-top: 30px;
 }
 
@@ -780,6 +787,7 @@ form.reservation-form h2{
 form.reservation-form .field{
     margin-bottom: 20px;
     width:100%;
+    position: relative;
 }
 
 form.reservation-form .field input,
@@ -999,3 +1007,39 @@ section.location-reservation{
 #map {
     height: 400px;
   }
+
+/** NEW Style **/
+button.datetime-local-datepicker-button {
+    background-color: #a61206;
+    border: none;
+    width: 100%;
+    padding: 10px 0;
+    color: white;
+}
+table.ui-datepicker-calendar{
+    width: 100%;
+}
+.datetime-local-calendar-dialog.datetime-local-open{
+    background-color: #e1e1e1;
+    padding: 20px;
+    width: 280px;
+    color: #000000;
+}
+.datetime-local-calendar-dialog.datetime-local-open a{
+    color: #a61206;
+    text-decoration: none;
+}
+.ui-datepicker-next{
+    float: right;
+}
+.ui-datepicker-header{
+    font-weight: bold;
+}
+.ui-corner-all{
+    cursor: pointer;
+}
+div.datetime-local-spin-btn-container{
+    position: absolute;
+    bottom: 0;
+    right: 0;
+}

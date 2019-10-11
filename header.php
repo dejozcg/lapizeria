@@ -16,14 +16,19 @@
     
     
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Lapizeria</title>
+    <!-- <title>Lapizeria</title> -->
     <?php wp_head(); ?>
 </head>
 <header class="site-header">
     <div class="container">
         <div class="logo">
             <a href="<?php echo esc_url(home_url('/')); ?>">
-                <img src="<?php echo get_template_directory_uri(); ?>/img/logo.svg" class="logoimage" alt="">
+                <?php 
+                    if(function_exists('the_custom_logo')){
+                        the_custom_logo();
+                    }
+                ?>
+               <!-- <img src="<?php // echo get_template_directory_uri(); ?>/img/logo.svg" class="logoimage" alt=""> -->
             </a>
         </div><!-- logo -->
         <div class="header-information">
