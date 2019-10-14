@@ -78,6 +78,11 @@ function lapizeria_style(){
 
 add_action('wp_enqueue_scripts', 'lapizeria_style');
 
+function lapizeria_admin_script(){
+	wp_enqueue_script('adminjs', get_template_directory_uri() . '/js/admin_ajax.js', array('jquery'), 1.0, true);
+}
+
+add_action('admin_enqueue_scripts', 'lapizeria_admin_script');
 
 // Add menu
 function lapizeria_menus(){

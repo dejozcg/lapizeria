@@ -93,12 +93,13 @@ function lapizeria_reservations()
         <table class="wp-list-table widefat striped">
             <thead>
                 <tr>
-                    <td>ID</td>
-                    <td>Name</td>
-                    <td>Date of Reservation</td>
-                    <td>Email</td>
-                    <td>Phone</td>
-                    <td>Message</td>
+                    <td class="manage-column">ID</td>
+                    <td class="manage-column">Name</td>
+                    <td class="manage-column">Date of Reservation</td>
+                    <td class="manage-column">Email</td>
+                    <td class="manage-column">Phone</td>
+                    <td class="manage-column">Message</td>
+                    <td class="manage-column">Delete</td>
                 </tr>
             </thead>
             <tbody>
@@ -115,6 +116,7 @@ function lapizeria_reservations()
                         <td><?php echo $reservation['email']; ?></td>
                         <td><?php echo $reservation['phone']; ?></td>
                         <td><?php echo $reservation['message']; ?></td>
+                        <td><a href="#" class="remove_reservation" data-reservation="<?php echo $reservation['id']; ?>">Remove</a></td>
                     <?php endforeach; ?>
                     </tr>
             </tbody>

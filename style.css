@@ -223,6 +223,29 @@ nav.site-nav ul {
     }
 }
 
+@media only screen and (min-width: 992px){
+    nav.site-nav ul li.menu-item-has-children{
+        position: relative;
+    }
+
+    nav.site-nav ul li.menu-item-has-children ul.sub-menu{
+        display: none;
+    }
+
+    nav.site-nav ul li.menu-item-has-children:hover ul.sub-menu{
+        display: block;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        z-index: 1000;
+        background-color: #ffffff;
+    }
+
+    nav.site-nav ul li.menu-item-has-children:hover ul.sub-menu li{
+        display: block;
+        padding-left;: 30px;
+    }
+}
 nav.site-nav ul li a{
     text-align: center;
     padding: 20px 0;
@@ -233,21 +256,11 @@ nav.site-nav ul li a{
     color: black;
     font-family: 'Raleway', sans-serif;
 }
-/* specialties-template-default single single-specialties postid-60 
-   page-template page-template-our_menu page-template-our_menu-php page page-id-22
-   post-template-default single single-post postid-89 single-format-standard
-   post-template-default single single-post postid-89 single-format-standard logged-in admin-bar wp-custom-logo customize-support
 
-specialties-template-default single single-specialties postid-68 logged-in admin-bar p-cwustom-logo customize-support
-
-specialties-template-default single single-specialties postid-68 logged-in admin-bar wp-custom-logo customize-support
-*/
 nav.site-nav ul li.current_page_item a,
 .post-template-default .main-menu ul li.current_page_parent,
-/* nav.site-nav ul li.current_page_parent a, */
 .single-specialties .main-menu nav.site-nav ul li.menu-item-25,
 .specialties-template-default .main-menu li.menu-item-25 {
-/* .single-specialties ul li.current_page_parent a { */
     border-bottom: 8px solid #a61206;
 }
 
