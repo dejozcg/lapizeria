@@ -1,4 +1,26 @@
 <?php
+function lapizeria_delete_reservation(){
+    if($_POST['type'] == 'delete'):
+        global $wpdb;
+        $table = $wpdb->prefix . 'reservations';
+        $id_reservations = $_POST['id'];
+
+        $result = $wpdb->delete($table, array('id' => $id_reservations), array('%d'));
+    endif;
+    if($result == 1){
+        $respond = array(
+            'response' => 'success',
+            'id'     => $id_reservations
+        );
+    }else{
+        $respond = array(
+            'response' => 'error'
+        );
+    }
+    die(json_encode($respond));
+}
+
+add_action('wp_ajax_lapizeria_delete_reservation', 'lapizeria_delete_reservation');
 
 function lapizeria_save_reservatio(){
     global $wpdb;
