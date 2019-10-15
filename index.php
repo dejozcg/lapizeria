@@ -18,8 +18,8 @@ $image = wp_get_attachment_image_src($image, 'full');
   </div>
 </div>
 
-<div class="main-content container">
-  <div class="container-grid">
+<div class="main-content clear">
+  <div class="container-grid container">
     <main class="content-text columns2-3">
       <?php while (have_posts()) : the_post(); ?>
         <article class="entry">

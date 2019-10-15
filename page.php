@@ -10,8 +10,8 @@
             </div>
         </div>
 
-        <div class="main-content container">
-            <main class="text-center content-text clear">
+        <div class="main-content clear">
+            <main class="text-center content-text container">
                 <?php the_content(); ?>
             </main>
         </div>

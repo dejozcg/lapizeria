@@ -243,7 +243,7 @@ nav.site-nav ul {
 
     nav.site-nav ul li.menu-item-has-children:hover ul.sub-menu li{
         display: block;
-        padding-left;: 30px;
+        padding-left: 30px;
     }
 }
 nav.site-nav ul li a{
@@ -339,6 +339,8 @@ nav.site-nav ul li.current_page_item a,
 @media only screen and (min-width: 768px){
     .main-content{
         margin-top: -90px;
+        margin-left: 100px;
+        margin-right: 100px;
     }
 }
 .content-text p{
@@ -600,7 +602,6 @@ header.entry-header p.author,
 
 .entry-information p.author{
     display: inline;
-    /* margin-top: 30px; */
     float: left;
     margin-top: 38px;
 }
