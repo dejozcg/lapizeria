@@ -53,6 +53,7 @@ function lapizeria_style(){
 	wp_register_script('datetime-local-polyfill', get_template_directory_uri() . '/js/datetime-local-polyfill.min.js', array('jquery', 'jquery-ui-core', 'jquery-ui-datepicker', 'modernizer'), '1.0.0', true);
 	wp_register_script('googlemaps', 'https://maps.googleapis.com/maps/api/js?key=' .$apikey . '&callback=initMap', array(), '', true);
 	wp_register_script('modernizer', 'https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js', array(), '2.8.3', true);
+	wp_register_script('recaptcha', 'https://www.google.com/recaptcha/api.js');
 	wp_register_script('fluidboxjs', get_template_directory_uri() . '/js/jquery.fluidbox.min.js', array('jquery'), '1.0.0', true);
 
     // add JavaScript
@@ -61,6 +62,7 @@ function lapizeria_style(){
 	wp_enqueue_script('jquery-ui-datepicker');
 	wp_enqueue_script('datetime-local-polyfill');
 	wp_enqueue_script('modernizer');
+	wp_enqueue_script('recaptcha');
 	wp_enqueue_script('fluidboxjs');
 	wp_enqueue_script('googlemaps');
 	wp_enqueue_script('script');

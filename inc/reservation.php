@@ -23,40 +23,62 @@ function lapizeria_delete_reservation(){
 add_action('wp_ajax_lapizeria_delete_reservation', 'lapizeria_delete_reservation');
 
 function lapizeria_save_reservatio(){
-    global $wpdb;
-
     
     if(isset($_POST['submit_reservation']) && $_POST['hidden'] == "1"){
+    
+        // read the value from recapcha response
+        $captcha = $_POST['g-recaptcha-response'];
+
+        // send the value to the server
+        $fields = array(
+            'secret'    => '6LcE270UAAAAAFf24xMZs05zNtC1XWWi8wBOrDkN',
+            'response'  => $captcha,
+            'remoteip'  => $_SERVER['REMOTE_ADR']
+        );
         
-        $table = $wpdb->prefix . 'reservations';
+        // send the request to the server
+        $ch = curl_init('https://www.google.com/recaptcha/api/siteverify');
 
-        $data = array (
-            'name' => sanitize_text_field($_POST['name']), 
-            'date' => sanitize_text_field($_POST['date']), 
-            'email' => sanitize_email($_POST['email']), 
-            'phone' => sanitize_text_field($_POST['phone']), 
-            'message' => sanitize_text_field($_POST['message'])
-        );
+        // configure the request
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+        curl_setopt($ch, CURLOPT_TIMEOUT, 15);
 
-        $format = array(
-            '%s',
-            '%s',
-            '%s',
-            '%s',
-            '%s'
-        );
+        // set the encode value in the URL
+        curl_setopt($ch, CURLOPT_POSTFIELDS, http_build_query($fields));
 
-        $result = $wpdb->insert($table, $data, $format);
-        var_dump($result);
+        // Read the return value
+        $response = json_decode(curl_exec($ch));
+        if($response->success){
+            global $wpdb;
+            $table = $wpdb->prefix . 'reservations';
+            $data = array (
+                'name' => sanitize_text_field($_POST['name']), 
+                'date' => sanitize_text_field($_POST['date']), 
+                'email' => sanitize_email($_POST['email']), 
+                'phone' => sanitize_text_field($_POST['phone']), 
+                'message' => sanitize_text_field($_POST['message'])
+            );
 
-        if($result){
-            $url = get_page_by_title('Thanks for reservation!');
-            wp_redirect(get_permalink($url));
-            exit;
-        }else{
-            $url = get_page_by_title('Error!');
-            wp_redirect(get_permalink($url));
-            exit;
+            $format = array(
+                '%s',
+                '%s',
+                '%s',
+                '%s',
+                '%s'
+            );
+
+            $result = $wpdb->insert($table, $data, $format);
+            //var_dump($result);
+    
+            if($result){
+                $url = get_page_by_title('Thanks for reservation!');
+                wp_redirect(get_permalink($url));
+                exit;
+            }else{
+                $url = get_page_by_title('Error!');
+                wp_redirect(get_permalink($url));
+                exit;
+            }
         }
     }
 
